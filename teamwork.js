@@ -1,13 +1,13 @@
 
-const teamMembers = ['Rafi', 'Meem', 'Shuvo'];
+const teamMembers = ['Nafis', 'Mahmudul', 'Noman'];
 
-let rafiScore = 0;
-let meemScore = 0;
-let shuvoScore = 0;
+let nafisScore = 0;
+let mahmudulScore = 0;
+let nomanScore = 0;
 
-const Rafi = {
-  id: Symbol('Rafi'),
-  name: 'Rafi',
+const Nafis = {
+  id: Symbol('Nafis'),
+  name: 'Nafis',
   age: 23,
   isActive: true,
   bugs: ['UI Bug', 'API Bug', 'Login Bug'],
@@ -48,7 +48,7 @@ function calculateGrade(bugCount) {
 
 const totalBugs = (user) => user.bugs.length;
 
-const users = [Rafi, Meem, Shuvo];
+const users = [Nafis, Meem, Shuvo];
 
 for (const user of users) {
   console.log(`\n👤 Name: ${user.name} (Age: ${user.age})`);
@@ -58,7 +58,7 @@ for (const user of users) {
   console.log(`🎯 Grade: ${calculateGrade(user.bugCount)}`);
 }
 
-Rafi.bugs.push('Navbar Bug');
+Nafis.bugs.push('Navbar Bug');
 
 Meem.bugs.pop();
 
@@ -71,7 +71,7 @@ const formattedDate = today.toLocaleDateString('en-GB', {
 console.log(`\nToday is: ${formattedDate}`);
 
 const scoreMap = new Map();
-scoreMap.set('Rafi', totalBugs(Rafi));
+scoreMap.set('Nafis', totalBugs(Nafis));
 scoreMap.set('Meem', totalBugs(Meem));
 scoreMap.set('Shuvo', totalBugs(Shuvo));
 

@@ -52,17 +52,30 @@ const users = [Rafi, Meem, Shuvo];
 
 for (const user of users) {
   console.log(`\n👤 Name: ${user.name} (Age: ${user.age})`);
-
   console.log(`📌 Bugs Found: ${user.bugs.join(', ')}`);
 
-  // bugCount update
   user.bugCount = totalBugs(user);
-
-  // Grade দেখানো
   console.log(`🎯 Grade: ${calculateGrade(user.bugCount)}`);
 }
-// নতুন bug যোগ করলাম Rafi-এর জন্য
+
 Rafi.bugs.push('Navbar Bug');
 
-// একটা bug fix হয়ে গেছে, pop দিয়ে সরালাম Meem-এর bug list থেকে
 Meem.bugs.pop();
+
+const today = new Date();
+const formattedDate = today.toLocaleDateString('en-GB', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric'
+});
+console.log(`\nToday is: ${formattedDate}`);
+
+const scoreMap = new Map();
+scoreMap.set('Rafi', totalBugs(Rafi));
+scoreMap.set('Meem', totalBugs(Meem));
+scoreMap.set('Shuvo', totalBugs(Shuvo));
+
+console.log('\n📊 Bug Scoreboard:');
+for (let [name, score] of scoreMap) {
+  console.log(`${name} → ${score} bugs`);
+}

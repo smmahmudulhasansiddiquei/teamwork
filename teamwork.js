@@ -32,3 +32,29 @@ const Shuvo = {
   bugCount: 6
 };
 
+function calculateGrade(bugCount) {
+  if (bugCount > 5) {
+    return '⭐ Bug Star';
+  } else if (bugCount >= 3) {
+    return '✅ Active Hunter';
+  } else {
+    return '🔍 Needs Improvement';
+  }
+}
+
+
+const totalBugs = (user) => user.bugs.length;
+
+const users = [Rafi, Meem, Shuvo];
+
+for (const user of users) {
+  console.log(`\n👤 Name: ${user.name} (Age: ${user.age})`);
+
+  console.log(`📌 Bugs Found: ${user.bugs.join(', ')}`);
+
+  // bugCount update
+  user.bugCount = totalBugs(user);
+
+  // Grade দেখানো
+  console.log(`🎯 Grade: ${calculateGrade(user.bugCount)}`);
+}

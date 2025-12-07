@@ -17,9 +17,9 @@ const Nafis = {
   bugCount: 3
 };
 
-const Meem = {
-  id: Symbol('Meem'),
-  name: 'Meem',
+const Mahmudul = {
+  id: Symbol('Mahmudul'),
+  name: 'Mahmudul',
   age: 21,
   isActive: true,
   bugs: ['UI Bug'],
@@ -48,7 +48,7 @@ function calculateGrade(bugCount) {
 
 const totalBugs = (user) => user.bugs.length;
 
-const users = [Nafis, Meem, Shuvo];
+const users = [Nafis, Mahmudul, Shuvo];
 
 for (const user of users) {
   console.log(`\n👤 Name: ${user.name} (Age: ${user.age})`);
@@ -60,7 +60,7 @@ for (const user of users) {
 
 Nafis.bugs.push('Navbar Bug');
 
-Meem.bugs.pop();
+Mahmudul.bugs.pop();
 
 const today = new Date();
 const formattedDate = today.toLocaleDateString('en-GB', {
@@ -72,7 +72,7 @@ console.log(`\nToday is: ${formattedDate}`);
 
 const scoreMap = new Map();
 scoreMap.set('Nafis', totalBugs(Nafis));
-scoreMap.set('Meem', totalBugs(Meem));
+scoreMap.set('Meem', totalBugs(Mahmudul));
 scoreMap.set('Shuvo', totalBugs(Shuvo));
 
 console.log('\n📊 Bug Scoreboard:');
